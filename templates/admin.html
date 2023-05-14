@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ornate-2k23| Rgukt-Ongole</title>
+	  <link rel=stylesheet href="{{url_for('static',filename='css/admin.css')}}" >
+</head>
+<style type="text/css">
+	th {
+  border: 2px solid black;
+  padding-bottom: 7pt;
+  background-color: #ddd;
+
+
+}
+
+</style>
+<body>
+
+</body>
+</html>
+<div class="container">
+	<table>
+		<thead>
+			<tr>
+				<th>S.no</th>
+				<th>Id Num</th>
+				<th>Name</th>
+				<th>Branch</th>
+				<th>Contact</th>
+				<th>Email</th>
+				<th>Events</th>
+				<th>Timestamp</th>
+				<th>Receipt file</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for student in data %}
+                    <tr>
+                    <td style="border: 2px solid black; padding-bottom: 20pt">{{student.id}}</td>
+                      <td style="border: 2px solid black;padding-bottom: 20pt">{{student.name}}</td>
+                      <td style="border: 2px solid black;padding-bottom: 20pt">{{student.id_num}}</td>
+                      <td style="border: 2px solid black;padding-bottom: 20pt">{{student.branch}}</td>
+                      <td style="border: 2px solid black;padding-bottom: 20pt">{{student.contact}}</td>
+                      <td style="border: 2px solid black;padding-bottom: 20pt">{{student.email}}</td>
+                      <td style="border: 2px solid black;padding-bottom: 20pt">{{student.events}}</td>
+                      <td style="border: 2px solid black;padding-bottom: 20pt">{{student.Timestamp}}</td>
+                      <td style="border: 2px solid black;padding-bottom: 20pt"><a href="{{url_for('downloadfile',id=1)}}" target="_blank">{{student.receipt}}</a></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
